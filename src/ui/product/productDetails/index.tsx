@@ -1,7 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react';
-import './index.less';
+import {PageLayout} from '../../../core/components/pageLayout';
 
 export const ProductDetails = observer(() => {
-  return <div className="product-details">product details</div>;
+  return <PageLayout title="product details">product details</PageLayout>;
 });

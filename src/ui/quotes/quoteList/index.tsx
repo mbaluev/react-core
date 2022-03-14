@@ -1,7 +1,7 @@
 import React from 'react';
 import {observer} from 'mobx-react';
-import './index.less';
+import {PageLayout} from '../../../core/components/pageLayout';
 
 export const QuoteList = observer(() => {
-  return <div className="quote-list">quote list</div>;
+  return <PageLayout title="quote list">quote list</PageLayout>;
 });
