@@ -1,15 +1,13 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
 
-export interface ICurrencyFieldControlFormat {
+interface IProps {
   inputRef: (instance: NumberFormat<string> | null) => void;
   onChange: (event: {target: {name: string; value: string}}) => void;
   name: string;
 }
 
-export const NumberFieldControlFormat = (
-  props: ICurrencyFieldControlFormat
-) => {
+export const FormatCurrency = (props: IProps) => {
   const {inputRef, onChange, ...other} = props;
   return (
     <NumberFormat

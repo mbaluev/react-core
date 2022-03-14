@@ -17,13 +17,9 @@ export const TextFieldControl = (props: TextFieldControlProps) => {
   const {className, variant, value, onChange, regex, multiline, ...other} =
     props;
 
-  const cls = ['text-field-control', 'field-control', 'field-control_is-edit'];
-  if (className) cls.push(className);
-  if (multiline) cls.push('text-field-control_multiline');
-
   const [state, setState] = useState<string | number | undefined>(value || '');
 
-  const cls_ = classNames(
+  const cls = classNames(
     'text-field-control',
     'field-control',
     'field-control_is-edit',
@@ -40,7 +36,7 @@ export const TextFieldControl = (props: TextFieldControlProps) => {
 
   return (
     <TextField
-      className={cls.join(' ')}
+      className={cls}
       variant="outlined"
       value={state}
       multiline={multiline}

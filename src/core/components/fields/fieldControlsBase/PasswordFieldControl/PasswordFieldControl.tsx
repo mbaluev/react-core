@@ -3,6 +3,8 @@ import {useUpdateEffect} from '../../../../hooks/useUpdateEffect';
 import {Visibility, VisibilityOff} from '@material-ui/icons';
 import {IconButton, InputAdornment, TextField} from '@material-ui/core';
 import {TextFieldProps} from '@material-ui/core/TextField/TextField';
+import {classNames} from '../../../../utils/classNames';
+import {isTextFieldControlHasData} from '../TextFieldControl';
 
 export type PasswordFieldControlProps = TextFieldProps & {
   value?: string;
@@ -12,16 +14,18 @@ export const PasswordFieldControl = (props: PasswordFieldControlProps) => {
   const {className, type, variant, value, onChange, InputProps, ...other} =
     props;
 
-  const cls = [
+  const [state, setState] = useState<string | undefined>(value || '');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const cls = classNames(
     'password-field-control',
     'field-control',
     'field-control_is-edit',
-  ];
-  if (className) cls.push(className);
-
-  const [state, setState] = useState<string | undefined>(value || '');
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-  if (!state) cls.push('field-control_no-data');
+    className,
+    {
+      'field-control_no-data': !isTextFieldControlHasData(state),
+    }
+  );
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -37,7 +41,7 @@ export const PasswordFieldControl = (props: PasswordFieldControlProps) => {
 
   return (
     <TextField
-      className={cls.join(' ')}
+      className={cls}
       type={showPassword ? 'text' : 'password'}
       variant="outlined"
       value={state}

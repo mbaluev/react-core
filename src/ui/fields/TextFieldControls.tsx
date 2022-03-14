@@ -3,11 +3,11 @@ import {InputAdornment} from '@material-ui/core';
 import {FormField, FormSection} from '../../core/components/form';
 import {
   FormatCurrency,
+  FormatPhone,
   percentViewFormat,
   TextFieldControl,
   TextFieldControlEditable,
 } from '../../core/components/fields';
-import {FormatPhone} from '../../core/components/fields/fieldControlsBase/TextFieldControl/FormatPhone';
 
 export const TextFieldControls = () => {
   const [value, setValue] = useState<string>();
