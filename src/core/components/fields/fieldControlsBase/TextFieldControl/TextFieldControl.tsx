@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {TextField} from '@material-ui/core';
 import {TextFieldProps} from '@material-ui/core/TextField/TextField';
 import {useUpdateEffect} from '../../../../hooks/useUpdateEffect';
+import {classNames} from '../../../../utils/classNames';
 
 export type TextFieldControlProps = TextFieldProps & {
   value?: string | number;
@@ -21,7 +22,17 @@ export const TextFieldControl = (props: TextFieldControlProps) => {
   if (multiline) cls.push('text-field-control_multiline');
 
   const [state, setState] = useState<string | number | undefined>(value || '');
-  if (!isTextFieldControlHasData(state)) cls.push('field-control_no-data');
+
+  const cls_ = classNames(
+    'text-field-control',
+    'field-control',
+    'field-control_is-edit',
+    className,
+    {
+      'text-field-control_multiline': Boolean(multiline),
+      'field-control_no-data': !isTextFieldControlHasData(state),
+    }
+  );
 
   useUpdateEffect(() => {
     setState(value);

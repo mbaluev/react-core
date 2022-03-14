@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import {InputAdornment} from '@material-ui/core';
 import {FormField, FormSection} from '../../core/components/form';
 import {
-  NumberFieldControlFormat,
+  FormatCurrency,
   percentViewFormat,
   TextFieldControl,
   TextFieldControlEditable,
 } from '../../core/components/fields';
+import {FormatPhone} from '../../core/components/fields/fieldControlsBase/TextFieldControl/FormatPhone';
 
 export const TextFieldControls = () => {
   const [value, setValue] = useState<string>();
@@ -14,37 +15,51 @@ export const TextFieldControls = () => {
     <FormSection title="TextField">
       <FormField title="1. TextFieldControl">
         <TextFieldControl disabled placeholder="disabled" />
-        <TextFieldControl
-          label="label"
-          placeholder="empty field"
-          onChange={(e) => {}}
-        />
+        <TextFieldControl placeholder="enter value" onChange={(e) => {}} />
         <TextFieldControl
           placeholder="error"
           error={true}
           helperText="Error message"
-          InputProps={{
-            inputComponent: NumberFieldControlFormat as any,
-            endAdornment: <InputAdornment position="end">days</InputAdornment>,
-          }}
         />
-      </FormField>
-      <FormField title="2. TextFieldControl multiline">
         <TextFieldControl
-          placeholder="field with value"
+          placeholder="multiline field"
           value="value"
           multiline
           rows={5}
         />
       </FormField>
+      <FormField title="2. TextFieldControl formats">
+        <TextFieldControl
+          placeholder="phone format"
+          onChange={(e) => {}}
+          InputProps={{
+            inputComponent: FormatPhone as any,
+          }}
+        />
+        <TextFieldControl
+          placeholder="number format"
+          error={true}
+          helperText="Error message"
+          InputProps={{
+            inputComponent: FormatCurrency as any,
+            endAdornment: <InputAdornment position="end">days</InputAdornment>,
+          }}
+        />
+        <TextFieldControl
+          placeholder="percent format"
+          InputProps={{
+            inputComponent: FormatCurrency as any,
+            endAdornment: <InputAdornment position="end">%</InputAdornment>,
+          }}
+        />
+      </FormField>
       <FormField title="3. TextFieldControlEditable">
         <TextFieldControlEditable
-          label="label"
           placeholder="empty editable field"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           InputProps={{
-            inputComponent: NumberFieldControlFormat as any,
+            inputComponent: FormatCurrency as any,
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
           }}
         />

@@ -1,0 +1,63 @@
+@import "../../less/params";
+
+@padding: 20px;
+
+.page-layout {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: @padding * 2;
+
+  &__title {
+    flex: 0 0 auto;
+    font-size: @base * 6;
+    line-height: normal;
+    font-weight: 500;
+  }
+
+  &__container {
+    flex: 1 1 auto;
+  }
+
+  &__title + &__container {
+    margin-top: 40px;
+  }
+
+  &__title,
+  &__container {
+    width: @media-lg - @padding * 4;
+  }
+}
+
+@media (max-width: @media-lg) {
+  .page-layout {
+    &__title,
+    &__container {
+      width: @media-md - @padding * 4;
+    }
+  }
+}
+
+@media (max-width: @media-md) {
+  .page-layout {
+    padding: @padding * 1.5;
+
+    &__title,
+    &__container {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: @media-sm) {
+  .page-layout {
+    padding: @padding;
+
+    &__title,
+    &__container {
+      width: 100%;
+    }
+  }
+}

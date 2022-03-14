@@ -22,6 +22,7 @@
       height: auto;
       padding: @base * 3 + 2;
       line-height: @base * 5;
+      z-index: 1;
     }
     & .MuiOutlinedInput-notchedOutline {
       border-color: lighten(@color-grey-200, 40%);
@@ -42,7 +43,6 @@
     & .MuiOutlinedInput-root {
       border-radius: @border-radius-default;
       background-color: @color-white;
-      overflow: hidden;
     }
     & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
     & .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
@@ -63,7 +63,6 @@
       cursor: not-allowed;
     }
     &:not(.checkbox-field-control):not(.radio-group-field-control):not(.switch-field-control) .Mui-disabled {
-      background-color: @color-grey-20;
       color: @color-grey-200;
 
       &.Mui-error {
@@ -71,7 +70,8 @@
       }
     }
     & .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline {
-      border-color: @color-grey-20;
+      border-color: lighten(@color-grey-200, 40%);
+      background-color: @color-grey-20;
     }
 
     & .MuiInputAdornment-root {
