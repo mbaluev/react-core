@@ -1,7 +1,7 @@
 import React from 'react';
-import {ButtonControls} from './ButtonControls';
-import {TextFieldControls} from './TextFieldControls';
-import {PasswordFieldControls} from './PasswordFieldControls';
+import {ButtonControls} from './sections/ButtonControls';
+import {TextFieldControls} from './sections/TextFieldControls';
+import {PasswordFieldControls} from './sections/PasswordFieldControls';
 import {PageLayout} from '../../core/components/pageLayout';
 import './index.less';
 

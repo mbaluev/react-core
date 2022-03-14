@@ -1,6 +1,6 @@
 import React from 'react';
-import {FormField, FormSection} from '../../core/components/form';
-import {Button} from '../../core/components/button';
+import {FormField, FormSection} from '../../../core/components/form';
+import {Button} from '../../../core/components/button';
 
 export const ButtonControls = () => {
   return (

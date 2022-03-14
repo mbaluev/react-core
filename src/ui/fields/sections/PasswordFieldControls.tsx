@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {FormField, FormSection} from '../../core/components/form';
-import {PasswordFieldControl} from '../../core/components/fields';
-import {PasswordFieldControlEditable} from '../../core/components/fields/fieldControlsEditable/PasswordFieldControl';
+import {FormField, FormSection} from '../../../core/components/form';
+import {PasswordFieldControl} from '../../../core/components/fields';
+import {PasswordFieldControlEditable} from '../../../core/components/fields/fieldControlsEditable/PasswordFieldControl';
 
 export const PasswordFieldControls = () => {
   const [value, setValue] = useState<string>('_Pa2');
