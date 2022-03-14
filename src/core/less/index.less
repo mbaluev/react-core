@@ -1,0 +1,68 @@
+@import "./params";
+@import "./animations.less";
+@import "./colors.less";
+@import "./fonts/jetbrainsmono";
+@import "./fonts/robotomono";
+@import "./fonts/roboto";
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: @font-family;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: @font-size;
+  color: @color-black;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: @font-family;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: @color-white !important;
+  -webkit-box-shadow: 0 0 0 30px @color-grey-300 inset !important;
+}
+
+a,
+.link {
+  color: @color-blue-light;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: @color-red;
+  }
+
+  &_disabled,
+  &_disabled:hover {
+    color: @color-grey-100;
+    cursor: not-allowed;
+  }
+}

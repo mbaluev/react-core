@@ -1,0 +1,60 @@
+@import "../../less/params";
+
+.header {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  background-color: @color-grey-230;
+
+  &__item {}
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: @color-grey-100;
+    font-size: @font-size;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+    position: relative;
+
+    & + & {
+      margin-left: 10px;
+    }
+
+    &:hover,
+    &_active {
+      color: @color-white;
+      cursor: pointer;
+      background-color: @color-blue;
+    }
+
+    & > * {
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  &__separator {
+    height: 100%;
+    padding: 5px 0;
+    margin: 0 10px;
+    display: block;
+
+    &:after {
+      height: 100%;
+      border-left: solid 1px @color-grey-200;
+      content: '';
+      display: block;
+    }
+  }
+}
