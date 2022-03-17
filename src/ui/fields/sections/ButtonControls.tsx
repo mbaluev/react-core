@@ -4,7 +4,7 @@ import {Button} from '../../../core/components/button';
 
 export const ButtonControls = () => {
   return (
-    <FormSection title="Buttons">
+    <FormSection title="-> Buttons">
       <FormField title="1. Button outlined" align="left">
         <Button variant="outlined" disabled className="field-control">
           outlined disabled

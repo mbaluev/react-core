@@ -8,7 +8,7 @@ export const SwitchFieldControls = () => {
   const [edit, setEdit] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <FormSection title="SwitchField">
+    <FormSection title="-> SwitchField">
       <FormField title="1. SwitchFieldControl">
         <SwitchFieldControl label="disabled" disabled />
         <SwitchFieldControl label="disabled checked" value={true} disabled />

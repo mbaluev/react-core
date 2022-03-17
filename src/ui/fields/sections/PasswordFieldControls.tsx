@@ -8,7 +8,7 @@ export const PasswordFieldControls = () => {
   const [edit, setEdit] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <FormSection title="PasswordField">
+    <FormSection title="-> PasswordField">
       <FormField title="1. PasswordFieldControl">
         <PasswordFieldControl placeholder="disabled" disabled value="qwe" />
         <PasswordFieldControl placeholder="simple" />

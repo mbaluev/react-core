@@ -20,7 +20,7 @@ export type DateFieldControlProps = TModify<
   };
 
 export const DateFieldControl = (props: DateFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, ...other} = props;
+  const {isEdit = true, loading, fixedHeight, multiline, ...other} = props;
 
   const cls = fieldControlClassNames('date-field-control', props);
 

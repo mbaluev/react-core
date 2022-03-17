@@ -79,16 +79,16 @@ export const DateFieldControlEdit = (props: DateFieldControlProps) => {
         className={cls}
         minDateMessage={
           shouldValidate
-            ? minDateMessage || 'Дата не может быть меньше 01.01.1900'
+            ? minDateMessage || "Date can't be less then 01.01.1900"
             : null
         }
         maxDateMessage={
           shouldValidate
-            ? maxDateMessage || 'Дата не может быть больше 01.01.2100'
+            ? maxDateMessage || "Date can't be grater then 01.01.2100"
             : null
         }
         invalidDateMessage={
-          shouldValidate ? invalidDateMessage || 'Не верный формат даты' : null
+          shouldValidate ? invalidDateMessage || 'Invalid date' : null
         }
         keyboardIcon={<CalendarTodayIcon />}
         {...other}

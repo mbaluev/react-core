@@ -9,21 +9,17 @@ export const DateFieldControls = () => {
   const [edit, setEdit] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <FormSection title="--> DateField">
+    <FormSection title="-> DateField">
       <FormField title="1. DateFieldControl">
-        {/*
         <DateFieldControl disabled placeholder="disabled" />
-        <DateFieldControl placeholder="simple" />
-        <DateFieldControl placeholder="multiline" multiline rows={5} />
+        <DateFieldControl placeholder="simple" shouldValidate />
         <DateFieldControl
           placeholder="error"
           helperText="Error message"
           error={true}
         />
-        */}
       </FormField>
       <FormField title="2. DateFieldControl view">
-        {/*
         <Button
           variant="contained"
           color="blue"
@@ -39,10 +35,8 @@ export const DateFieldControls = () => {
           onChange={(date, name) => setValue(date)}
           fixedHeight
         />
-        */}
       </FormField>
       <FormField title="3. DateFieldControl loading">
-        {/*
         <Button
           variant="contained"
           color="blue"
@@ -58,7 +52,6 @@ export const DateFieldControls = () => {
           onChange={(date, name) => setValue(date)}
           fixedHeight
         />
-        */}
       </FormField>
     </FormSection>
   );

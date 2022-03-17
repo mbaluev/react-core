@@ -8,7 +8,7 @@ export const CheckboxFieldControls = () => {
   const [edit, setEdit] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   return (
-    <FormSection title="CheckboxField">
+    <FormSection title="-> CheckboxField">
       <FormField title="1. CheckboxFieldControl">
         <CheckboxFieldControl label="disabled" disabled />
         <CheckboxFieldControl label="disabled checked" value={true} disabled />
