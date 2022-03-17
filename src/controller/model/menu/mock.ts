@@ -1,7 +1,7 @@
-import {IMenuItem} from './index';
+import {IMenuItemDTO} from './index';
 import {ROUTER_CONST} from '../../../core/app/settings/routerConst';
 
-export const MENU_CONFIG: IMenuItem[] = [
+export const MENU_CONFIG: IMenuItemDTO[] = [
   {
     id: '1',
     type: 'link',

@@ -2,10 +2,10 @@ import {BaseViewModel} from '../base';
 import {action, makeObservable, observable} from 'mobx';
 import {IMenuViewModel} from './interface';
 import {IMenuService} from '../../../business/modules/menu/interface';
-import {IMenuItem} from '../../../model/menu';
+import {IMenuItemDTO} from '../../../model/menu';
 
 export class MenuViewModel extends BaseViewModel implements IMenuViewModel {
-  data: IMenuItem[] = [];
+  data: IMenuItemDTO[] = [];
 
   constructor(protected service: IMenuService) {
     super();
@@ -18,7 +18,7 @@ export class MenuViewModel extends BaseViewModel implements IMenuViewModel {
     this.service = service;
   }
 
-  setData = (data: IMenuItem[]) => {
+  setData = (data: IMenuItemDTO[]) => {
     this.data = data;
   };
 

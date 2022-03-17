@@ -1,8 +1,8 @@
 import {IBaseViewModel} from '../base/interface';
-import {IMenuItem} from '../../../model/menu';
+import {IMenuItemDTO} from '../../../model/menu';
 
 export interface IMenuViewModel extends IBaseViewModel {
-  data: IMenuItem[];
+  data: IMenuItemDTO[];
   load: () => Promise<void>;
   setActive: (name: string) => void;
 }

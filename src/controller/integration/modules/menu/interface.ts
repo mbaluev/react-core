@@ -1,5 +1,5 @@
-import {IMenuItem} from '../../../model/menu';
+import {IMenuItemDTO} from '../../../model/menu';
 
 export interface IMenuAPIClient {
-  load: () => Promise<IMenuItem[]>;
+  load: () => Promise<IMenuItemDTO[]>;
 }
