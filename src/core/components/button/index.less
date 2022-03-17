@@ -46,26 +46,26 @@
   &.MuiButton-outlined {
     &.button_color_default {
       color: @color-grey-200;
-      border-color: @color-grey-200;
       background-color: @color-white;
+      border-color: lighten(@color-grey-200, 20%);
       &:hover {
-        border-color: lighten(@color-grey-200, 20%);
+        border-color: @color-grey-200;
       }
     }
     &.button_color_blue {
       color: @color-blue;
-      border-color: @color-blue;
       background-color: @color-white;
+      border-color: lighten(@color-blue, 20%);
       &:hover {
-        border-color: lighten(@color-blue, 20%);
+        border-color: @color-blue;
       }
     }
     &.button_color_red {
       color: @color-red;
-      border-color: @color-red;
       background-color: @color-white;
+      border-color: lighten(@color-red, 20%);
       &:hover {
-        border-color: lighten(@color-red, 20%);
+        border-color: @color-red;
       }
     }
   }

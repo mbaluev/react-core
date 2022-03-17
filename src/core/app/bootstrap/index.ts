@@ -8,6 +8,11 @@ import {VIEW_MODEL, viewModelContainer} from '../../../controller/viewModel';
 import {createRouter, Route, Router} from 'router5';
 import {initRouter} from '../router/initRouter';
 import {IMenuViewModel} from '../../../controller/viewModel/modules/menu/interface';
+import moment from 'moment';
+import numeral from 'numeral';
+
+moment.locale('en');
+numeral.locale('en');
 
 export class Bootstrap {
   private readonly diContainer: Container;

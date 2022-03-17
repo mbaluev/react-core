@@ -1,7 +1,7 @@
 @import "../../less/params";
 
 .header {
-  padding: 10px 10px 0;
+  padding: 0 10px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -21,19 +21,22 @@
     color: @color-grey-100;
     font-size: @font-size;
     cursor: pointer;
-    padding: 10px;
-    border-radius: 3px;
+    padding: 20px 15px;
     position: relative;
-    margin: 0 10px 10px 0;
 
     &:last-child {
       margin-right: 0;
     }
 
-    &:hover,
-    &_active {
+    &:hover {
       color: @color-white;
       cursor: pointer;
+      background-color: @color-grey-200;
+    }
+
+    &_active,
+    &_active:hover {
+      color: @color-white;
       background-color: @color-blue;
     }
 
