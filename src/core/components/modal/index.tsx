@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {useUpdateEffect} from '../../hooks/useUpdateEffect';
 import Draggable from 'react-draggable';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
@@ -15,6 +15,7 @@ interface IModalProps {
   onClose: () => void;
   footerButtons?: IButtonProps[];
   fullScreen?: boolean;
+  allowFullScreen?: boolean;
 }
 
 export const Modal: FC<IModalProps> = (props) => {
@@ -25,6 +26,7 @@ export const Modal: FC<IModalProps> = (props) => {
     onClose,
     footerButtons,
     fullScreen,
+    allowFullScreen,
     children,
   } = props;
 
@@ -72,12 +74,18 @@ export const Modal: FC<IModalProps> = (props) => {
               <div className="modal-title">
                 <div className="modal-title-text">{title}</div>
                 <div className="modal-title-buttons">
-                  <div
-                    className="modal-title-button"
-                    onClick={fullScreenChange}
-                  >
-                    {isFullScreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
-                  </div>
+                  {allowFullScreen && (
+                    <div
+                      className="modal-title-button"
+                      onClick={fullScreenChange}
+                    >
+                      {isFullScreen ? (
+                        <FullscreenExitIcon />
+                      ) : (
+                        <FullscreenIcon />
+                      )}
+                    </div>
+                  )}
                   <div className="modal-title-button" onClick={onCloseHandler}>
                     <CloseIcon />
                   </div>
