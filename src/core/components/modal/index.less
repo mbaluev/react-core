@@ -19,7 +19,7 @@
   justify-content: center;
 
   &-backdrop {
-    background-color: rgba(@color-grey-290, 0.5);
+    background-color: rgba(@color-black, 0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -54,7 +54,6 @@
   }
   &-dialog {
     background-color: @color-white;
-    border: solid 2px transparent;
     border-radius: @border-radius-default;
     position: relative;
     overflow: hidden;
@@ -64,6 +63,12 @@
     max-width: ~"calc(100% - @{dialog-margin-right} - @{dialog-margin-left})";
     min-width: 400px;
     margin: @dialog-margin-top @dialog-margin-right @dialog-margin-bottom @dialog-margin-left;
+    box-shadow:
+            0 0 0 1px rgb(53 72 91 / 14%),
+            0 2px 2px rgb(0 0 0 / 3%),
+            0 4px 4px rgb(0 0 0 / 4%),
+            0 10px 8px rgb(0 0 0 / 5%),
+            0 15px 15px rgb(0 0 0 / 6%);
 
     &_shake {
       animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
