@@ -5,20 +5,21 @@
   flex-direction: column;
   flex: 1 1 auto;
 
-  & .form-section__content {
+  & > .form-section > .form-section__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: @base * 6;
+
+    & > .form-field {
+      padding: 0;
+    }
   }
 
-  & .form-field {
-    padding: 0;
-  }
 }
 
 @media (max-width: @media-md) {
   .fields {
-    & .form-section__content {
+    & > .form-section > .form-section__content {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -26,7 +27,7 @@
 
 @media (max-width: @media-sm) {
   .fields {
-    & .form-section__content {
+    & > .form-section > .form-section__content {
       grid-template-columns: repeat(1, 1fr);
     }
   }

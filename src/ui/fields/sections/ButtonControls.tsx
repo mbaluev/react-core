@@ -9,8 +9,8 @@ export const ButtonControls = () => {
         <Button variant="outlined" disabled className="field-control">
           outlined disabled
         </Button>
-        <Button variant="outlined" color="default" className="field-control">
-          outlined default
+        <Button variant="outlined" color="grey" className="field-control">
+          outlined grey
         </Button>
         <Button variant="outlined" color="blue" className="field-control">
           outlined blue
@@ -29,8 +29,8 @@ export const ButtonControls = () => {
         <Button variant="outlined" disabled className="field-control">
           contained disabled
         </Button>
-        <Button variant="contained" color="default" className="field-control">
-          contained default
+        <Button variant="contained" color="grey" className="field-control">
+          contained grey
         </Button>
         <Button variant="contained" color="blue" className="field-control">
           contained blue
@@ -49,8 +49,8 @@ export const ButtonControls = () => {
         <Button variant="text" disabled className="field-control">
           text disabled
         </Button>
-        <Button variant="text" color="default" className="field-control">
-          text default
+        <Button variant="text" color="grey" className="field-control">
+          text grey
         </Button>
         <Button variant="text" color="blue" className="field-control">
           text blue

@@ -57,20 +57,29 @@
   &__label + &__content {
     margin-top: @base * 3;
   }
+}
 
-  &_row {
-    display: flex;
-    flex-direction: row;
-    padding-top: @base * 3;
+@media (min-width: @media-xs) {
+  .form-field {
+    &_row {
+      display: flex;
+      flex-direction: row;
+      padding-top: @base * 3;
 
-    .form-field__label {
-      width: @base * 75;
-      margin-right: @base * 5;
-      flex: 0 0 auto;
-    }
-    .form-field__content {
-      margin-top: 0;
-      flex: 1 1 auto;
+      .form-field__label {
+        width: @base * 50;
+        margin-right: @base * 5;
+        flex: 0 0 auto;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        text-align: right;
+      }
+      .form-field__content {
+        margin-top: 0;
+        flex: 1 1 auto;
+      }
     }
   }
 }

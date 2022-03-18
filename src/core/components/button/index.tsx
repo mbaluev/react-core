@@ -6,7 +6,7 @@ import {
 import './index.less';
 import {classNames} from '../../utils/classNames';
 
-export type TButtonColorTypes = 'default' | 'blue' | 'red';
+export type TButtonColorTypes = 'blue' | 'grey' | 'red';
 export type TButtonSizeTypes = 'default' | 'medium' | 'small';
 
 export type IButtonProps = Omit<MuiButtonProps, 'color' | 'size'> & {

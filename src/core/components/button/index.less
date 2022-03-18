@@ -25,7 +25,7 @@
     min-width: @base * 60;
   }
   &.button_size_medium {
-    padding: @base * 3 + 2 @base * 6;
+    padding: @base * 3 + 2 @base * 8;
     width: auto;
   }
   &.button_size_small {
@@ -44,12 +44,12 @@
   }
 
   &.MuiButton-outlined {
-    &.button_color_default {
+    &.button_color_grey {
       color: @color-grey-200;
       background-color: @color-white;
-      border-color: lighten(@color-grey-200, 20%);
+      border-color: lighten(@color-grey-130, 20%);
       &:hover {
-        border-color: @color-grey-200;
+        border-color: @color-grey-130;
       }
     }
     &.button_color_blue {
@@ -70,12 +70,12 @@
     }
   }
   &.MuiButton-contained {
-    &.button_color_default {
-      color: @color-white;
-      background-color: @color-grey-200;
+    &.button_color_grey {
+      color: @color-black;
+      background-color: @color-grey-50;
       &:hover {
-        color: @color-white;
-        background-color: darken(@color-grey-200, 10%);
+        color: @color-black;
+        background-color: darken(@color-grey-50, 5%);
       }
     }
     &.button_color_blue {
@@ -97,10 +97,9 @@
   }
   &.MuiButton-text {
     background-color: transparent;
-    &.button_color_default {
-      color: @color-grey-200;
+    &.button_color_grey {
+      color: @color-black;
       &:hover {
-        color: @color-grey-200;
         background-color: lighten(@color-grey-200, 55%);
       }
     }

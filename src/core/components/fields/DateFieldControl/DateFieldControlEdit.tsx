@@ -4,7 +4,7 @@ import {format, parse} from 'date-fns';
 import locale from 'date-fns/locale/en-US';
 import {DateFieldControlProps} from './DateFieldControl';
 import {ParsableDate} from '@material-ui/pickers/constants/prop-types';
-import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import EventIcon from '@material-ui/icons/Event';
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
@@ -79,18 +79,18 @@ export const DateFieldControlEdit = (props: DateFieldControlProps) => {
         className={cls}
         minDateMessage={
           shouldValidate
-            ? minDateMessage || "Date can't be less then 01.01.1900"
+            ? minDateMessage || 'Date cannot be less then 01.01.1900'
             : null
         }
         maxDateMessage={
           shouldValidate
-            ? maxDateMessage || "Date can't be grater then 01.01.2100"
+            ? maxDateMessage || 'Date cannot be greater then 01.01.2100'
             : null
         }
         invalidDateMessage={
           shouldValidate ? invalidDateMessage || 'Invalid date' : null
         }
-        keyboardIcon={<CalendarTodayIcon />}
+        keyboardIcon={<EventIcon />}
         {...other}
       />
     </MuiPickersUtilsProvider>
