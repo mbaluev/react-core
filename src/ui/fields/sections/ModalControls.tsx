@@ -14,18 +14,19 @@ import {
 
 export const ModalControls = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isRow, setIsRow] = useState<boolean>(false);
   const footerButtons: IButtonProps[] = [
     {
       size: 'medium',
       color: 'grey',
       variant: 'contained',
-      children: 'Cancel',
-      onClick: () => setIsOpen(false),
+      children: isRow ? 'vertical' : 'horizontal',
+      onClick: () => setIsRow(!isRow),
     },
     {
       size: 'medium',
       variant: 'contained',
-      children: 'Save',
+      children: 'save',
       onClick: () => setIsOpen(false),
     },
   ];
@@ -43,7 +44,7 @@ export const ModalControls = () => {
         >
           <Form style={{padding: 30}}>
             <FormSection title="Enter some data">
-              <FormField isRow title="Days">
+              <FormField isRow={isRow} title="Days">
                 <TextFieldControl
                   placeholder="days format"
                   InputProps={inputPropsNumber('days')}
@@ -51,7 +52,7 @@ export const ModalControls = () => {
                   fixedHeight
                 />
               </FormField>
-              <FormField isRow title="Percent">
+              <FormField isRow={isRow} title="Percent">
                 <TextFieldControl
                   placeholder="percent format"
                   InputProps={inputPropsNumber('%')}
@@ -59,7 +60,7 @@ export const ModalControls = () => {
                   fixedHeight
                 />
               </FormField>
-              <FormField isRow title="Currency">
+              <FormField isRow={isRow} title="Currency">
                 <TextFieldControl
                   placeholder="currency format"
                   InputProps={inputPropsCurrency('USD')}
@@ -67,7 +68,7 @@ export const ModalControls = () => {
                   fixedHeight
                 />
               </FormField>
-              <FormField isRow title="Enter your personal phone number">
+              <FormField isRow={isRow} title="Enter your personal phone number">
                 <TextFieldControl
                   InputProps={inputPropsPhone}
                   viewFormat={viewFormatPhone}
