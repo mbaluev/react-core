@@ -11,17 +11,11 @@ export const MENU_CONFIG: IMenuItemDTO[] = [
   {
     id: '2',
     type: 'link',
-    label: 'Quotes',
-    path: ROUTER_CONST.QUOTES.fullName,
-  },
-  {
-    id: '3',
-    type: 'link',
     label: 'Catalog',
     path: ROUTER_CONST.PRODUCTS.fullName,
   },
   {
-    id: '4',
+    id: '3',
     type: 'link',
     label: 'Fields',
     path: ROUTER_CONST.FIELDS.fullName,

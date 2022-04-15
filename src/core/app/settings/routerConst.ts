@@ -19,14 +19,4 @@ export const ROUTER_CONST = {
       path: '/:id',
     },
   },
-  QUOTES: {
-    name: 'quotes',
-    fullName: 'quotes',
-    path: '/quotes',
-    DETAILS: {
-      name: 'details',
-      fullName: 'quotes.details',
-      path: '/:id',
-    },
-  },
 };

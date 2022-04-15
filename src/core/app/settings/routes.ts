@@ -33,19 +33,4 @@ export const routes = [
       },
     ],
   },
-  {
-    name: ROUTER_CONST.QUOTES.name,
-    path: ROUTER_CONST.QUOTES.path,
-    onEnter: (params: Params, router: Router<RouterDependencies>): void => {},
-    children: [
-      {
-        name: ROUTER_CONST.QUOTES.DETAILS.name,
-        path: ROUTER_CONST.QUOTES.DETAILS.path,
-        onEnter: (
-          params: Params,
-          router: Router<RouterDependencies>
-        ): void => {},
-      },
-    ],
-  },
 ];
