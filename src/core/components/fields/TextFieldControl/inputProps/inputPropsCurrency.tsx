@@ -7,11 +7,16 @@ export const getCurrencySign = (codeLat: string = 'USD') => {
   return CURRENCIES_KNOWN[codeLat] ? CURRENCIES_KNOWN[codeLat] : codeLat;
 };
 
-export const inputPropsCurrency = (codeLat?: string) => {
+export const inputPropsCurrency = (
+  codeLat?: string,
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void
+) => {
   return {
     inputComponent: EditFormatNumber as any,
     endAdornment: (
-      <InputAdornment position="end">{getCurrencySign(codeLat)}</InputAdornment>
+      <InputAdornment position="end" onClick={onClick}>
+        {getCurrencySign(codeLat)}
+      </InputAdornment>
     ),
   };
 };

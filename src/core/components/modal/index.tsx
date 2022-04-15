@@ -5,12 +5,12 @@ import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import CloseIcon from '@material-ui/icons/Close';
 import {Button, IButtonProps} from '../button';
-import {classNames} from '../../utils/classNames';
+import {classNames} from '../../utils/classNames/classNames';
 import './index.less';
 
 interface IModalProps {
   isOpen: boolean;
-  title: string;
+  title?: string;
   className?: string;
   onClose: () => void;
   footerButtons?: IButtonProps[];

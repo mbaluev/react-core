@@ -3,7 +3,7 @@ import {useUpdateEffect} from '../../../hooks/useUpdateEffect';
 import {Visibility, VisibilityOff} from '@material-ui/icons';
 import {IconButton, InputAdornment, TextField} from '@material-ui/core';
 import {PasswordFieldControlProps} from './PasswordFieldControl';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {isTextFieldControlHasData} from '../TextFieldControl';
 
 export const PasswordFieldControlEdit = (props: PasswordFieldControlProps) => {

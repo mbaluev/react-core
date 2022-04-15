@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useUpdateEffect} from '../../../hooks/useUpdateEffect';
 import {FormControl, FormControlLabel, FormHelperText} from '@material-ui/core';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {SwitchFieldControlProps} from './SwitchFieldControl';
 import {Switch} from './Switch';
 

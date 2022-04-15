@@ -1,6 +1,6 @@
 import React from 'react';
 import {findSelectItem, SelectFieldControlProps} from './SelectFieldControl';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 
 export const SelectFieldControlView = (props: SelectFieldControlProps) => {
   const {className, value, items} = props;

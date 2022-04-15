@@ -1,6 +1,8 @@
 import {action, makeObservable, observable} from 'mobx';
+import {injectable} from 'inversify';
 import {IBaseViewModel} from './interface';
 
+@injectable()
 export class BaseViewModel implements IBaseViewModel {
   isLoading = false;
   isEdit = false;

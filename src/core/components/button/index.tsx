@@ -3,8 +3,8 @@ import {
   Button as MuiButton,
   ButtonProps as MuiButtonProps,
 } from '@material-ui/core';
+import {classNames} from '../../utils/classNames/classNames';
 import './index.less';
-import {classNames} from '../../utils/classNames';
 
 export type TButtonColorTypes = 'blue' | 'grey' | 'red';
 export type TButtonSizeTypes = 'default' | 'medium' | 'small';
@@ -29,7 +29,7 @@ export const Button: FC<IButtonProps> = ({
     [`${className}`]: !!className,
     [`button_size_${size}`]: !!size,
     [`button_color_${color}`]: !!color,
-    btn_icon: !!iconButton,
+    button_icon: !!iconButton,
   });
 
   return (

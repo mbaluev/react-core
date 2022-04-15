@@ -1,7 +1,7 @@
 @import "../../../less/params";
 
 .form-section {
-  margin-bottom: @base * 10;
+  margin-bottom: @base * 8;
 
   & + .divider-custom.MuiDivider-root {
     margin-top: 0;
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: @base * 6;
+    margin-bottom: @base * 4;
 
     &-left {
       display: flex;
@@ -29,11 +29,13 @@
       &-collapse {
         display: flex;
         align-items: center;
-        margin-left: @base * 5;
         color: @color-grey-100;
+        margin-left: @base * 5;
+        margin-top: -@base;
+        margin-bottom: -@base;
 
         & .MuiSvgIcon-root {
-          font-size: 28px;
+          font-size: 2.2rem;
         }
       }
     }
@@ -45,6 +47,9 @@
   &_collapsible &__title {
     &-left {
       cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
   &_collapsed &__title {
@@ -52,7 +57,7 @@
   }
 
   &__label {
-    font-size: 17px;
+    font-size: 1.5rem;
     line-height: normal;
     font-weight: 500;
   }
@@ -61,8 +66,8 @@
   }
 
   &__subtitle {
-    color: rgba(@color-black, 0.4);
-    font-size: @base * 4;
+    color: @color-grey-100;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: normal;
     margin-bottom: @base * 4;
@@ -94,7 +99,7 @@
       justify-content: center;
     }
     &_collapsed {
-      display: none;
+      display: none !important;
     }
   }
 }

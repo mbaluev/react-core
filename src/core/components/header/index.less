@@ -1,50 +1,79 @@
 @import "../../less/params";
 
+@padding: @base * 4;
+
 .header {
-  padding: 0 10px;
+  padding: @base * 2 0;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow: hidden;
   flex: 0 0 auto;
-  flex-wrap: wrap;
   background-color: @color-grey-230;
+  justify-content: center;
+  z-index: 3;
 
-  &__item {}
-
-  &__link {
+  &__container {
     display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: bold;
-    white-space: nowrap;
-    color: @color-grey-100;
-    font-size: @font-size;
-    cursor: pointer;
-    padding: 20px 15px;
-    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
+    //overflow: hidden;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    width: @media-lg - @padding * 2;
+  }
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    margin-right: @base * 2;
+  }
+  &__center {
+    display: flex;
+    flex: 1 1 auto;
+    margin-right: @base * 2;
+  }
+  &__right {
+    display: flex;
+    align-items: flex-end;
+    flex: 0 0 auto;
+  }
+}
 
-    &:last-child {
+@media (max-width: @media-lg) {
+  .header {
+    padding: @base * 2;
+
+    &__container {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: @media-xs) {
+  .header {
+    &__container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: @base * 2;
+    }
+    &__left {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    &__center {
       margin-right: 0;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
     }
-
-    &:hover {
-      color: @color-white;
-      cursor: pointer;
-      background-color: @color-grey-200;
-    }
-
-    &_active,
-    &_active:hover {
-      color: @color-white;
-      background-color: @color-blue;
-    }
-
-    & > * {
-      margin-left: 15px;
-      &:first-child {
-        margin-left: 0;
-      }
+    &__right {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      justify-content: flex-end;
     }
   }
 }

@@ -1,15 +1,18 @@
 import {Container} from 'inversify';
-import {SERVICE} from '../business';
 import {VIEW_MODEL} from './ids';
 import {MenuViewModel} from './modules';
-import {IMenuService} from '../business/modules/menu/interface';
+import {AppViewModel} from './modules/app';
+import {IAppViewModel} from './modules/app/interface';
+import {IMenuViewModel} from './modules/menu/interface';
+import {IFilterViewModel} from './modules/filter/interfaces';
+import {FilterViewModel} from './modules/filter';
 
-export const viewModelContainer = new Container();
+export const viewModelContainer = new Container({defaultScope: 'Singleton'});
+
+viewModelContainer.bind<IAppViewModel>(VIEW_MODEL.App).to(AppViewModel);
+
+viewModelContainer.bind<IMenuViewModel>(VIEW_MODEL.Menu).to(MenuViewModel);
 
 viewModelContainer
-  .bind(VIEW_MODEL.Menu)
-  .toDynamicValue(({container}) => {
-    const service = container.get<IMenuService>(SERVICE.Menu);
-    return new MenuViewModel(service);
-  })
-  .inSingletonScope();
+  .bind<IFilterViewModel>(VIEW_MODEL.Filter)
+  .to(FilterViewModel);

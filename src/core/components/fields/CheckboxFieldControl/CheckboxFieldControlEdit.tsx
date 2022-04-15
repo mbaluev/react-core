@@ -7,7 +7,7 @@ import {
   FormControlLabel,
   FormHelperText,
 } from '@material-ui/core';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 
 export const CheckboxFieldControlEdit = (props: CheckboxFieldControlProps) => {
   const {

@@ -12,11 +12,9 @@ export const routes = [
     },
   },
   {
-    name: ROUTER_CONST.FIELDS.name,
-    path: ROUTER_CONST.FIELDS.path,
-    onEnter: (params: Params, router: Router<RouterDependencies>): void => {
-      // const container = router.getDependencies().container;
-    },
+    name: ROUTER_CONST.COMPONENTS.name,
+    path: ROUTER_CONST.COMPONENTS.path,
+    onEnter: async (params: Params, router: Router<RouterDependencies>) => {},
   },
   {
     name: ROUTER_CONST.PRODUCTS.name,

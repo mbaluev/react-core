@@ -1,5 +1,5 @@
 import React from 'react';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {MultiSelectFieldControlProps} from './MultiSelectFieldControl';
 
 export const MultiSelectFieldControlView = (

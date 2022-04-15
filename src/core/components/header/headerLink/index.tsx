@@ -1,37 +1,43 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {IMenuItemDTO} from '../../../../controller/model/menu';
 import {useRoute} from 'react-router5';
-import {classNames} from '../../../utils/classNames';
-import {useViewModel} from '../../../hooks/useViewModel';
-import {VIEW_MODEL} from '../../../../controller/viewModel';
-import {IMenuViewModel} from '../../../../controller/viewModel/modules/menu/interface';
+import {classNames} from '../../../utils/classNames/classNames';
+import {constants} from 'router5';
+import {SStorage} from '../../../utils/storage/storage';
+import useRouterConst from '../../../hooks/useRouterConst';
+import './index.less';
 
 export const HeaderLink = (props: IMenuItemDTO) => {
-  const {label, path, icon, isActive} = props;
+  const {label, path, icon, isActive, loadFromSession} = props;
 
-  const {setActive} = useViewModel<IMenuViewModel>(VIEW_MODEL.Menu);
+  const ROUTER_CONST = useRouterConst();
+  const {router} = useRoute();
 
-  const {router, route} = useRoute();
+  let toRouteName = '';
+  Object.keys(ROUTER_CONST).forEach((route) => {
+    if (ROUTER_CONST[route].fullName === path) {
+      toRouteName = ROUTER_CONST[route].name;
+    }
+  });
+
   const onClick = () => {
-    router.navigate(path as string);
-    setActive(path as string);
+    router.navigate(
+      path || constants.UNKNOWN_ROUTE,
+      loadFromSession && SStorage.filters
+        ? SStorage.filters[toRouteName]
+        : undefined
+    );
   };
 
-  useEffect(() => {
-    setActive(route.name);
-    // eslint-disable-next-line
-  }, []);
-
   const cls = classNames(
-    'header__item',
     'header__link',
     isActive ? 'header__link_active' : undefined
   );
 
   return (
     <div className={cls} onClick={onClick}>
-      {label && <span className="header__label">{label}</span>}
       {icon}
+      {label && <span className="header__link-label">{label}</span>}
     </div>
   );
 };

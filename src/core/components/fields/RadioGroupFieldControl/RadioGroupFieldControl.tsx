@@ -19,7 +19,7 @@ export type RadioGroupFieldControlProps = RadioGroupProps &
   };
 
 export const RadioGroupFieldControl = (props: RadioGroupFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, ...other} = props;
+  const {isEdit = true, loading, className, ...other} = props;
 
   const cls = fieldControlClassNames('radio-group-field-control', props);
 

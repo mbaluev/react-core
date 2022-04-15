@@ -1,8 +1,9 @@
 export interface IMenuItemDTO {
-  id: string;
-  type: 'link' | 'separator';
   label?: string;
   path?: string;
   icon?: JSX.Element;
   isActive?: boolean;
+  position?: 'left' | 'right';
+  dot?: boolean;
+  loadFromSession?: boolean;
 }

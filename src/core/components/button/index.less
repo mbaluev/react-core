@@ -3,11 +3,11 @@
 .button {
   &.MuiButton-root {
     font-family: @font-family;
-    font-size: @font-size;
+    font-size: 1rem;
     text-transform: none;
     box-shadow: none;
     border-radius: @border-radius-default;
-    line-height: normal;
+    line-height: 1rem;
     transition: none;
     letter-spacing: normal;
     border: solid 2px transparent;
@@ -17,24 +17,29 @@
     &:hover {
       box-shadow: none;
     }
-    & .MuiButton-label {}
+    & .MuiButton-label {
+    }
   }
 
   &.button_size_default {
-    padding: @base * 3 + 2 @base * 8;
-    min-width: @base * 60;
+    height: @input-height;
+    padding: 0 @base * 6;
+    min-width: @base * 50;
   }
   &.button_size_medium {
-    padding: @base * 3 + 2 @base * 8;
+    height: @input-height;
+    padding: 0 @base * 6;
     width: auto;
   }
   &.button_size_small {
-    padding: @base @base * 6;
+    height: @base * 6;
+    padding: 0 @base * 4;
     width: auto;
   }
 
   &.button_icon {
-    padding: @base * 3 + 2;
+    height: @input-height;
+    padding: 0 @base * 2;
     min-width: auto;
 
     & .MuiButton-startIcon,
@@ -135,5 +140,12 @@
 
   &.Mui-focusVisible {
     box-shadow: none;
+  }
+
+  &.button_icon {
+    & .MuiButton-startIcon,
+    & .MuiButton-endIcon {
+      margin: 0;
+    }
   }
 }

@@ -12,7 +12,7 @@ export type CheckboxFieldControlProps = CheckboxProps &
   };
 
 export const CheckboxFieldControl = (props: CheckboxFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, ...other} = props;
+  const {isEdit = true, loading, className, ...other} = props;
 
   const cls = fieldControlClassNames('checkbox-field-control', props);
 

@@ -2,17 +2,20 @@ import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
 import {IApiModule} from './interface';
 import {Params} from 'router5/dist/types/base';
 import {IErrorsModule} from '../../../errors/modules/base/interface';
-import {HttpMethod} from './const';
+import {HttpMethod, REACT_APP_CORE_URL} from './const';
+import {inject, injectable} from 'inversify';
+import {ERRORS_MODULE} from '../../../errors';
 
+@injectable()
 export class ApiModule implements IApiModule {
-  private readonly api: AxiosInstance;
-  protected errorsContainer: IErrorsModule;
+  @inject(ERRORS_MODULE) private errorsContainer!: IErrorsModule;
 
-  constructor(url: string, errorsContainer: IErrorsModule, params?: Params) {
-    this.errorsContainer = errorsContainer;
+  private readonly api: AxiosInstance;
+  protected prefixUrl: string = REACT_APP_CORE_URL;
+
+  constructor() {
     this.api = axios.create({
-      baseURL: url,
-      params: params,
+      baseURL: this.prefixUrl,
     });
   }
 

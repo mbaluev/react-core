@@ -1,6 +1,6 @@
-import {Skeleton} from '@material-ui/lab';
 import React from 'react';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
+import {Skeleton} from '../../skeleton';
 import './index.less';
 
 interface IProps {

@@ -23,9 +23,9 @@ export const TextFieldControl = (props: TextFieldControlProps) => {
   const {
     isEdit = true,
     loading,
-    fixedHeight,
     viewFormat,
     multiline,
+    className,
     ...other
   } = props;
 

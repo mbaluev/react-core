@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {format, parse} from 'date-fns';
 import locale from 'date-fns/locale/en-US';
 import {DateFieldControlProps} from './DateFieldControl';
@@ -25,7 +25,7 @@ export const DateFieldControlEdit = (props: DateFieldControlProps) => {
     autoOk,
     variant,
     inputVariant,
-    format,
+    format = 'yyyy-dd-MM',
     InputAdornmentProps,
     value,
     onChange,
@@ -49,11 +49,11 @@ export const DateFieldControlEdit = (props: DateFieldControlProps) => {
   useEffect(() => {
     const dateValue = value
       ? typeof value === 'string'
-        ? parse(value, 'dd.MM.yyyy', new Date())
+        ? parse(value, format, new Date())
         : value
       : null;
     setState(dateValue);
-  }, [value]);
+  }, [value, format]);
 
   return (
     <MuiPickersUtilsProvider utils={LocalizedUtils} locale={locale}>
@@ -61,7 +61,7 @@ export const DateFieldControlEdit = (props: DateFieldControlProps) => {
         autoOk
         variant="inline"
         inputVariant="outlined"
-        format={format || 'dd.MM.yyyy'}
+        format={format}
         InputAdornmentProps={{position: 'end'}}
         value={state}
         onChange={(value) => {

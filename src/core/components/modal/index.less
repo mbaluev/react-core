@@ -65,7 +65,7 @@
     flex-direction: column;
     max-height: ~"calc(100% - @{dialog-margin-top} - @{dialog-margin-bottom})";
     max-width: ~"calc(100% - @{dialog-margin-right} - @{dialog-margin-left})";
-    min-width: 400px;
+    min-width: @base * 80;
     margin: @dialog-margin-top @dialog-margin-right @dialog-margin-bottom @dialog-margin-left;
     box-shadow:
             0 0 0 1px rgb(53 72 91 / 14%),
@@ -88,8 +88,8 @@
   }
   &-title {
     flex: 0 0 auto;
-    padding-bottom: 10px;
-    margin: 20px;
+    padding-bottom: @base * 2;
+    margin: @base * 4;
     display: flex;
     border-bottom: solid 1px @color-grey-50;
     cursor: grab;
@@ -100,7 +100,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       padding: 10px;
-      font-size: 20px;
+      font-size: 1.3rem;
       font-weight: 500;
       align-items: center;
       display: flex;
@@ -111,13 +111,17 @@
       flex-wrap: nowrap;
     }
     &-button {
-      padding: 10px;
+      padding: 0 @base * 2;
       border-radius: 3px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       color: @color-grey-100;
+
+      & .MuiSvgIcon-root {
+        font-size: 2rem;
+      }
 
       &:hover {
         color: @color-blue;
@@ -135,6 +139,7 @@
     flex: 1 1 auto;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: @base * 6;
 
     &-text {
       font-size: 0.8rem;
@@ -142,15 +147,15 @@
   }
   &-footer {
     flex: 0 0 auto;
-    padding: 30px;
+    padding: 0 @base * 6 @base * 6;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: @base * 4;
   }
 }
 
 @media (max-width: @media-xs) {
   .modal-dialog {
-    margin: 10px;
+    margin: @base * 2;
   }
 }

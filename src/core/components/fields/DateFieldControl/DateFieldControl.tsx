@@ -1,7 +1,7 @@
 import React from 'react';
 import {SkeletonFieldControl} from '../SkeletonFieldControl';
 import {DateFieldControlView} from './DateFieldControlView';
-import {TModify} from '../../../utils/tModify';
+import {TModify} from '../../../utils/ts/tModify';
 import {KeyboardDatePickerProps} from '@material-ui/pickers';
 import {ParsableDate} from '@material-ui/pickers/constants/prop-types';
 import {DateFieldControlEdit} from './DateFieldControlEdit';
@@ -20,7 +20,7 @@ export type DateFieldControlProps = TModify<
   };
 
 export const DateFieldControl = (props: DateFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, multiline, ...other} = props;
+  const {isEdit = true, loading, multiline, className, ...other} = props;
 
   const cls = fieldControlClassNames('date-field-control', props);
 

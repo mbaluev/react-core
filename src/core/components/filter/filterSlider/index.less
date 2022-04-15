@@ -1,0 +1,13 @@
+@import "../../../less/params";
+
+.filter-slider {
+  &.field-control {
+    & .slider-field-control__input {
+      border-color: @color-blue;
+    }
+
+    &_no-data .slider-field-control__input {
+      border-color: lighten(@color-grey-200, 40%);
+    }
+  }
+}

@@ -13,7 +13,7 @@ export type SwitchFieldControlProps = SwitchProps &
   };
 
 export const SwitchFieldControl = (props: SwitchFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, ...other} = props;
+  const {isEdit = true, loading, className, ...other} = props;
 
   const cls = fieldControlClassNames('switch-field-control', props);
 

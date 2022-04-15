@@ -3,7 +3,7 @@
 .switch-field-control {
   width: fit-content;
 
-  &.field-control-error {
+  &.field-control_error {
     &.MuiFormControl-root {
       & .MuiButtonBase-root {
         & + .MuiSwitch-track {
@@ -21,12 +21,12 @@
 
   &.MuiFormControl-root {
     & .MuiFormControlLabel-root {
-      margin-left: -@base * 2;
+      margin-left: -@base * 2 + 2;
       margin-right: 0;
 
       & .MuiFormControlLabel-label {
         margin: 0 @base;
-        font-size: @font-size;
+        font-size: 1rem;
         font-family: @font-family;
       }
     }

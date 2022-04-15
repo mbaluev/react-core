@@ -1,7 +1,9 @@
 import {action, makeObservable, observable} from 'mobx';
-import {guid} from '../../../../core/utils/guid';
+import {guid} from '../../../../core/utils/guid/guid';
 import {IErrorsModule} from './interface';
+import {injectable} from 'inversify';
 
+@injectable()
 export class ErrorsModule implements IErrorsModule {
   errors: any[] = [];
 

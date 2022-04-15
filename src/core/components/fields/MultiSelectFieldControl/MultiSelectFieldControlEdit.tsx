@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useUpdateEffect} from '../../../hooks/useUpdateEffect';
 import {MultiSelectFieldControlProps} from './MultiSelectFieldControl';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {
   FormControl,
   FormHelperText,
@@ -58,7 +58,7 @@ export const MultiSelectFieldControlEdit = (
             return placeholder;
           }
           return items
-            ?.filter((item) => sel.includes(item.value))
+            ?.filter((item) => sel.includes(String(item.value)))
             .map((item) => item.label)
             .join(', ');
         }}
@@ -82,7 +82,7 @@ export const MultiSelectFieldControlEdit = (
         )}
         {items?.map((item, index) => {
           return (
-            <MenuItem key={index} value={item.value ? item.value : ''}>
+            <MenuItem key={index} value={item.value ? String(item.value) : ''}>
               {item.label}
             </MenuItem>
           );

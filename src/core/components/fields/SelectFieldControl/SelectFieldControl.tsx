@@ -9,6 +9,7 @@ import {BaseFieldControlProps, fieldControlClassNames} from '../index';
 export interface ISelectItem {
   value?: number | string;
   label: string;
+  disabled?: boolean;
 }
 
 export type SelectFieldControlProps = SelectProps &
@@ -24,7 +25,7 @@ export const findSelectItem = (items?: ISelectItem[], value?: any) => {
 };
 
 export const SelectFieldControl = (props: SelectFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, ...other} = props;
+  const {isEdit = true, loading, className, ...other} = props;
 
   const cls = fieldControlClassNames('select-field-control', props);
 

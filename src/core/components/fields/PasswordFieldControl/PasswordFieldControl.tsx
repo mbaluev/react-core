@@ -14,7 +14,7 @@ export type PasswordFieldControlProps = TextFieldProps &
   };
 
 export const PasswordFieldControl = (props: PasswordFieldControlProps) => {
-  const {isEdit = true, loading, fixedHeight, ...other} = props;
+  const {isEdit = true, loading, className, ...other} = props;
 
   const cls = fieldControlClassNames('password-field-control', props);
 

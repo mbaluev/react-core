@@ -1,0 +1,28 @@
+@import "../../less/params";
+
+.filter {
+  padding: @base * 2;
+
+  .field-control {
+    &.MuiFormControl-root {
+      & .MuiOutlinedInput-notchedOutline {
+        border-color: @color-blue;
+      }
+      & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+      & .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+        border-color: @color-blue;
+      }
+    }
+    &_no-data {
+      &.MuiFormControl-root {
+        & .MuiOutlinedInput-notchedOutline {
+          border-color: lighten(@color-grey-200, 40%);
+        }
+        & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+        & .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+          border-color: lighten(@color-grey-200, 20%);
+        }
+      }
+    }
+  }
+}

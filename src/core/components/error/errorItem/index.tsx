@@ -1,4 +1,5 @@
 import React from 'react';
+import CloseIcon from '@material-ui/icons/Close';
 import './index.less';
 
 interface IErrorItemProps {
@@ -11,7 +12,7 @@ const ErrorItem = (props: IErrorItemProps) => {
     <div className="error-item">
       <div className="error-item-message">{message}</div>
       <div className="error-item-button">
-        <span className="m-i-cross" onClick={onClose} />
+        <CloseIcon onClick={onClose} />
       </div>
     </div>
   );

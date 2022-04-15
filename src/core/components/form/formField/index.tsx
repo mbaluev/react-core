@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import './index.less';
 
 export interface IFormFieldProps {

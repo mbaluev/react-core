@@ -1,0 +1,67 @@
+@import "../../../less/params";
+
+.count-field-control {
+  height: @input-height;
+  display: flex;
+  flex-direction: column;
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+  &.MuiFormControl-root &__minus,
+  &.MuiFormControl-root &__plus {
+    display: flex;
+    cursor: pointer;
+
+    & .MuiSvgIcon-root {
+      //color: @color-blue;
+    }
+  }
+  &__label {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  &__slider {
+    display: flex;
+
+    &.MuiSlider-root {
+      padding: @base 0;
+    }
+  }
+
+  &.field-control_is-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &.field-control_error {
+    & .MuiSlider-root {
+      color: @color-red;
+    }
+    & .MuiSlider-thumb {
+      background-color: @color-red;
+    }
+  }
+  &.field-control_error &__label {
+    color: @color-red;
+  }
+  &.field-control_error.MuiFormControl-root &__minus,
+  &.field-control_error.MuiFormControl-root &__plus {
+    & .MuiSvgIcon-root {
+      color: @color-red;
+    }
+  }
+
+  & .MuiSlider-thumb.Mui-disabled {
+    width: 14px;
+    height: 14px;
+    margin-top: -5px;
+    margin-left: -7px;
+    background-color: @color-grey-100;
+  }
+}

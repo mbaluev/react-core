@@ -3,7 +3,7 @@ import {
   isTextFieldControlHasData,
   TextFieldControlProps,
 } from './TextFieldControl';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 
 export const TextFieldControlView = (props: TextFieldControlProps) => {
   const {className, value, viewFormat} = props;

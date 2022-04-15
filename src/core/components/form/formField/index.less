@@ -1,8 +1,7 @@
 @import "../../../less/params";
 
 .form-field {
-  padding-top: @base * 6;
-  //overflow: hidden;
+  padding-top: @base * 3;
 
   &:first-child {
     padding-top: 0;
@@ -55,7 +54,7 @@
   }
 
   &__label + &__content {
-    margin-top: @base * 3;
+    margin-top: @base * 2;
   }
 }
 
@@ -67,10 +66,10 @@
       padding-top: @base * 3;
 
       .form-field__label {
-        width: @base * 50;
-        margin-right: @base * 5;
+        width: @base * 40;
+        margin-right: @base * 3;
         flex: 0 0 auto;
-        min-height: 48px;
+        min-height: @input-height;
         display: flex;
         align-items: center;
         justify-content: right;

@@ -4,13 +4,9 @@
   position: relative;
 
   &.MuiFormControl-root {
-    & .MuiInputBase-input {
-      font-family: @font-family;
-      font-size: @font-size;
-    }
     & .MuiFormLabel-root {
       font-family: @font-family;
-      font-size: @font-size;
+      font-size: 1rem;
       &.Mui-focused {
         color: @color-grey-200;
       }
@@ -18,20 +14,16 @@
         color: @color-red;
       }
     }
-    & .MuiOutlinedInput-input {
-      height: auto;
-      padding: @base * 3 + 2;
-      line-height: @base * 5;
-      z-index: 1;
-    }
     & .MuiOutlinedInput-notchedOutline {
       border-color: lighten(@color-grey-200, 40%);
       & legend {
-        font-size: 1em;
+        font-size: 1rem;
       }
     }
     & .MuiFormHelperText-root {
       margin: @base * 2 + 2 0 0 0;
+      font-size: 0.9rem;
+
       &.Mui-error {
         color: @color-red;
       }
@@ -40,16 +32,29 @@
       color: @color-grey-130;
     }
 
-    & .MuiOutlinedInput-root {
+    & .MuiInputBase-root {
+      height: @input-height;
       border-radius: @border-radius-default;
       background-color: @color-white;
+
+      &.MuiInputBase-multiline {
+        height: auto;
+      }
     }
-    & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
-    & .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-      border-color: @color-grey-200;
+    & .MuiInputBase-root.Mui-focused .MuiOutlinedInput-notchedOutline,
+    & .MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
+      border-color: lighten(@color-grey-200, 20%);
     }
-    & .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+    & .MuiInputBase-root.Mui-error .MuiOutlinedInput-notchedOutline {
       border-color: @color-red;
+    }
+
+    & .MuiInputBase-input {
+      font-family: @font-family;
+      font-size: 1rem;
+      height: 100%;
+      padding: 0 @base * 2 + 2;
+      z-index: 1;
     }
 
     & .MuiInputLabel-outlined {
@@ -62,7 +67,8 @@
     & .Mui-disabled {
       cursor: not-allowed;
     }
-    &:not(.checkbox-field-control):not(.radio-group-field-control):not(.switch-field-control) .Mui-disabled {
+    &:not(.checkbox-field-control):not(.radio-group-field-control):not(.switch-field-control):not(.count-field-control)
+      .Mui-disabled {
       color: @color-grey-200;
 
       &.Mui-error {
@@ -76,12 +82,12 @@
 
     & .MuiInputAdornment-root {
       & .MuiTypography-body1 {
-        font-size: @font-size;
+        font-size: 1rem;
         font-family: @font-family;
-        color: @color-black;
+        color: @color-grey-130;
       }
       & .MuiButtonBase-root {
-        margin: 0 -@base*3;
+        //margin: 0 -@base * 3;
       }
     }
     & .MuiInputAdornment-positionStart {
@@ -99,22 +105,32 @@
     }
   }
 
-  &_is-edit {}
+  &_is-edit {
+  }
   &_is-view {
-    display: block;
+    min-height: @input-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-
-  &_no-data {
-    color: @color-grey-100;
-  }
-
-  &_fixed-height {
-    height: 48px;
+  &_is-loading {
+    min-height: @input-height;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  &_height_auto {
+    min-height: auto;
+    height: auto;
+  }
+
+  &_no-data {
+    color: @color-grey-50;
+  }
+  &_disabled {
+    cursor: not-allowed;
   }
 }

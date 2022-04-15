@@ -4,10 +4,10 @@ export const ROUTER_CONST = {
     fullName: 'home',
     path: '/',
   },
-  FIELDS: {
-    name: 'fields',
-    fullName: 'fields',
-    path: '/fields',
+  COMPONENTS: {
+    name: 'components',
+    fullName: 'components',
+    path: '/components',
   },
   PRODUCTS: {
     name: 'products',

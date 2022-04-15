@@ -1,0 +1,18 @@
+@import "../../../../core/less/params";
+
+.bread-crumbs__skeleton {
+  display: flex;
+
+  & .bread-crumb {
+    display: flex;
+  }
+
+  & .bread-crumb .skeleton {
+    flex: 0 0 auto;
+  }
+
+  & .bread-crumb:after {
+    content: " ";
+    margin: 0 @base;
+  }
+}

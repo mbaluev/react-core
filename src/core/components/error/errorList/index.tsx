@@ -7,6 +7,7 @@ import './index.less';
 
 const ErrorList = observer(() => {
   const {errors, remove} = useViewModel(ERRORS_MODULE);
+
   return errors.length > 0 ? (
     <div className="error-list">
       {errors.map((item: any) => (

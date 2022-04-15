@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useUpdateEffect} from '../../../hooks/useUpdateEffect';
 import {RadioGroupFieldControlProps} from './RadioGroupFieldControl';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {
   FormControl,
   FormControlLabel,

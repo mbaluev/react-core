@@ -1,15 +1,15 @@
 import React from 'react';
 import moment from 'moment';
 import {isValid} from 'date-fns';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 import {DateFieldControlProps} from './DateFieldControl';
 
 export const DateFieldControlView = (props: DateFieldControlProps) => {
-  const {className, value} = props;
+  const {className, value, format = 'YYYY-DD-MM'} = props;
 
   const displayValue = value
     ? typeof value === 'string' || isValid(value)
-      ? moment(value, ['DD.MM.YYYY', moment.ISO_8601]).format('DD.MM.YYYY')
+      ? moment(value, [format, moment.ISO_8601]).format(format)
       : 'Invalid Date'
     : '';
 

@@ -7,7 +7,7 @@
     }
   }
   & .MuiTypography-root {
-    font-size: @font-size;
+    font-size: 1rem;
     font-family: @font-family;
   }
 
@@ -23,7 +23,7 @@
     flex-direction: row;
   }
 
-  &.field-control-error {
+  &.field-control_error {
     &.MuiFormControl-root {
       & .MuiIconButton-root {
         color: @color-red;
@@ -46,5 +46,9 @@
   }
   &.field-control_is-edit.field-control_no-data {
     color: @color-black;
+  }
+
+  &.field-control_is-loading {
+    width: @base * 20;
   }
 }

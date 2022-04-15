@@ -1,26 +1,27 @@
 import {BaseViewModel} from '../base';
 import {action, makeObservable, observable} from 'mobx';
+import {inject, injectable} from 'inversify';
+import {SERVICE} from '../../../business';
 import {IMenuViewModel} from './interface';
 import {IMenuService} from '../../../business/modules/menu/interface';
 import {IMenuItemDTO} from '../../../model/menu';
 
+@injectable()
 export class MenuViewModel extends BaseViewModel implements IMenuViewModel {
+  @inject(SERVICE.Menu) private service!: IMenuService;
+
   data: IMenuItemDTO[] = [];
 
-  constructor(protected service: IMenuService) {
+  constructor() {
     super();
     makeObservable(this, {
       data: observable,
+
+      load: action,
       setData: action,
       setActive: action,
-      load: action,
     });
-    this.service = service;
   }
-
-  setData = (data: IMenuItemDTO[]) => {
-    this.data = data;
-  };
 
   load = async () => {
     this.setLoading(true);
@@ -31,10 +32,12 @@ export class MenuViewModel extends BaseViewModel implements IMenuViewModel {
       this.setLoading(false);
     }
   };
-
-  setActive = (name: string) => {
+  setData = (data: IMenuItemDTO[]) => {
+    this.data = data;
+  };
+  setActive = (name?: string) => {
     const data = this.data?.map((item) => {
-      item.isActive = item.path?.includes(name);
+      item.isActive = name ? item.path?.includes(name) : false;
       return item;
     });
     this.setData(data);

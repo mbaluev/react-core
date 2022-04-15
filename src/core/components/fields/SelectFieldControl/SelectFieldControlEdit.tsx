@@ -9,7 +9,7 @@ import {
   MenuItem,
   Select,
 } from '@material-ui/core';
-import {classNames} from '../../../utils/classNames';
+import {classNames} from '../../../utils/classNames/classNames';
 
 export const SelectFieldControlEdit = (props: SelectFieldControlProps) => {
   const {
@@ -72,7 +72,11 @@ export const SelectFieldControlEdit = (props: SelectFieldControlProps) => {
         )}
         {items?.map((item, index) => {
           return (
-            <MenuItem key={index} value={item.value ? item.value : ''}>
+            <MenuItem
+              key={index}
+              value={item.value ? item.value : ''}
+              disabled={item.disabled}
+            >
               {item.label}
             </MenuItem>
           );
