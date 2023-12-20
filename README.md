@@ -1,4 +1,4 @@
-# react-core
+# --NOT FINISHED-- react-core
 
 ### todo:
 
